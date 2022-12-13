@@ -5,3 +5,4 @@
 (deftest split-words-test
   (testing "Should split words correctly"
     (is (= (split-words "Hello test") ["Hello", "test"]))))
+

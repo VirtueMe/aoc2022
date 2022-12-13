@@ -1,0 +1,2 @@
+(ns main
+  (:gen-class))

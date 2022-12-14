@@ -25,7 +25,7 @@
   (testing "Should be able to find the elf that has the most calories with him"
     (is (= (find-most-calories input) 24000))))
 
-(deftest test-find-most-calories
+(deftest test-find-top-three-calories input
   (testing "Should be able to find the 3 elfes that has the most calories with them"
     (is (= (find-top-three-calories input) 45000))))
 

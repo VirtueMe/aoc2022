@@ -66,11 +66,10 @@
 
 (defn format-moves
   [input]
-  (let [move-regex #"move (?<count>[\d]+) from (?<from>[\d]+) to (?<to>[\d]+)"]
-    (let [matcher (re-matcher move-regex input)]
-      (if (.matches matcher)
-        {:count (Integer. (.group matcher "count")) :from (.group matcher "from") :to (.group matcher "to")}
-        nil))))
+  (let [move-regex #"move (?<count>[\d]+) from (?<from>[\d]+) to (?<to>[\d]+)" matcher (re-matcher move-regex input)]
+    (if (.matches matcher)
+      {:count (Integer. (.group matcher "count")) :from (.group matcher "from") :to (.group matcher "to")}
+      nil)))
 
 (defn make-element
   [item]
@@ -128,17 +127,17 @@
 (defn solution-05-01
   ([] (solution-05-01 input))
   ([input]
-  (->> input
-       (partition-by empty?)
-       (make-board)
-       (move-stacks crane-9000)
-       (get-message))))
+   (->> input
+        (partition-by empty?)
+        (make-board)
+        (move-stacks crane-9000)
+        (get-message))))
 
 (defn solution-05-02
   ([] (solution-05-02 input))
   ([input]
-  (->> input
-       (partition-by empty?)
-       (make-board)
-       (move-stacks crane-9001)
-       (get-message))))
+   (->> input
+        (partition-by empty?)
+        (make-board)
+        (move-stacks crane-9001)
+        (get-message))))
